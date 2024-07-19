@@ -67,10 +67,6 @@ def Facturas ():
    
     
     
-    
-    
-Registro_Prenda_Nueva()
-
 
         
         
