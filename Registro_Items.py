@@ -62,5 +62,74 @@ def Facturas ():
             if elemento.get(id_ropa)==id_ropa:
                 
                 
+############################################################################
+                
+
+import datetime
+
+facturas = []
+
+RUTA_ARCHIVO = "Facturas.json"
+
+def guardar_datos_facturas(facturas):
+    global RUTA_ARCHIVO
+    try:
+        contenido = json.dumps(facturas, indent=4)
+        with open(RUTA_ARCHIVO, "w") as file:
+            file.write(contenido)
+        print("Datos guardados exitosamente!!")
+    except Exception:
+        print("Error al guardar datos")
+
+def cargar_datos_facturas():
+    global RUTA_ARCHIVO
+    facturass = []
+    try:
+        with open(RUTA_ARCHIVO, "r") as file:
+            datos = json.load(file)
+            if isinstance(datos, list):
+                for factura in datos:
+                    facturas.append(factura)
+
+        print("Datos cargados exitosamente!!")
+        return facturas
+    except Exception:
+        print("Error al cargar datos")
+        return []
+    
+    
+# def pedir_fecha():
+#     while True:
+#         fecha_str = input("Ingrese una fecha (dd/mm/yyyy): ")
+#         try:
+#             fecha = datetime.datetime.strptime(fecha_str, "%d/%m/%Y")
+#             return fecha
+#         except ValueError:
+#             print("Formato de fecha incorrecto. Por favor, intente de nuevo.")
+
+
+
+
+# def Pedir_Datos ():
+#     facturas = cargar_datos_facturas()
+#     id_factura = input("Id De la FACtura:  ")
+#     for factura in facturas:
+#         if factura.get( id_factura,None) != None:
+#             print("Factura Registrada anterioermete")
+#             return
+#     info_Factura ={}
+#     info_Factura["Fecha"]= pedir_fecha()
+#     info_Factura["Nombre"]=input("Nombre:  ")   
+#     info_Factura["ID"]=input("Identificacion:  ")   
+#     info_Factura["Telefono"]= input("Telefono:  ") 
+#     Prueba={}
+#     Prueba[id_factura]=info_Factura
+#     facturas.append(Prueba)
+#     guardar_datos_facturas(facturas)
+#     return
+    
+    
+# Pedir_Datos ()
+                
                 
                 
