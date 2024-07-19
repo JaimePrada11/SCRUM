@@ -29,4 +29,13 @@ def cargar_datos_facturas():
     except Exception:
         print("Error al cargar datos")
         return []
-    
+
+
+
+
+# Importante 
+
+# 1- Que la cantidad se reste entre los dos json
+# 2- Que el Id concuerden con el json de inventario 
+# 3- que la fecha sea con import day time para poder llamar por fecha
+# 4-Reporte de ganancias llamar info de costos y restar con el precio 

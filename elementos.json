@@ -3,16 +3,22 @@
         "109533": {
             "descripcion": "Jean",
             "cantiddad": 200,
+            "marca":"gef",
+            "talla":"M",
+            "estado": "activo",
             "costo": 20,
             "precio": 35
         }
     },
     {
         "2030": {
-            "descripcion": "Camisa Roja",
-            "cantiddad": 3000,
-            "costo": 25,
-            "precio": 45
+            "descripcion": "Jean",
+            "cantiddad": 200,
+            "marca":"gef",
+            "talla":"M",
+            "estado": "activo",
+            "costo": 20,
+            "precio": 35
         }
     }
 ]
