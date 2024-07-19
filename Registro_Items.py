@@ -35,21 +35,35 @@ def Facturas ():
     info_Factura["Nombre"]=input("Nombre")   
     info_Factura["Telefono"]= input("Telefono") 
     producto = {}
+    info_Factura[producto]={}
     
-##############################################################################
-    
-    Cantidad_de_productos_comprados = int(input("Cantidad de productos comprados"))
-    for i in range(Cantidad_de_productos_comprados):
-        Numero_articulo = "Articulo " + input("Numero de articulo en la factura")
-        id_r = input("Id Del producto:  ")
+##################################################################################3
+    id_r = input("Id del producto a comprar:  ")
+    Cuentos_tipos_de_propducto = int(input("Cuentos tipos de propducto"))
+    for i in range(Cuentos_tipos_de_propducto):
+        info_Factura[producto][id_r] = input("Id Del producto:  ")
         elementos = cargar_datos_elementos()
         for elemento in elementos:
             if elemento.get(id_r,None)==None:
                 print('Elemento  No Registrado')
-                return
-            for id_r, costo 
+                return            
+            Numero_de_productos= "Producto N " + input(f"Del siguiente ID {id_r} cuantos va a llevar")
+            info_Factura[producto][id_r]["Numero de producto"] = Numero_de_productos
+            if elemento.get(id_r)==id_r:
+                
+                
+                
             
-            
+ 
+                
+                
+                
+                
+                
+                
+                
+                
+
                 
             
         

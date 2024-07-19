@@ -1,11 +1,8 @@
 import json
 
-
-
-
 facturas = []
 
-RUTA_ARCHIVO = "facturas.json"
+RUTA_ARCHIVO = "Facturas.json"
 
 def guardar_datos_facturas(facturas):
     global RUTA_ARCHIVO

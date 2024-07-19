@@ -1,7 +1,7 @@
 [
     {
         "109533": {
-            "descripcion": "Jean Rojo Talla M ",
+            "descripcion": "Jean",
             "cantiddad": 200,
             "costo": 20,
             "precio": 35
@@ -9,7 +9,7 @@
     },
     {
         "2030": {
-            "descripcion": "Camisa Roja talla M",
+            "descripcion": "Camisa Roja",
             "cantiddad": 3000,
             "costo": 25,
             "precio": 45
