@@ -24,10 +24,10 @@ def generate_id(prefix='F', width=3):
 
 def pedir_fecha():
     while True:
-        fecha = input("Ingresa la fecha en formato DD-MM-YYYY: ")
+        fecha = input("Ingresa la fecha en formato DD/MM/YYYY: ")
         try:
-            fecha = datetime.strptime(fecha, "%d-%m-%Y")
-            return fecha
+            fecha = datetime.strptime(fecha, "%d/%m/%Y")
+            return fecha.strftime("%d/%m/%Y")
         except ValueError:
             print("Formato de fecha incorrecto. Por favor, intente de nuevo.")
 
@@ -44,9 +44,7 @@ def facturas():
     print("******")
     IDFactura = generate_id()
     factura = {} 
-
-    fecha = pedir_fecha()
-    factura["fecha"] = fecha.strftime("%d-%m-%Y") 
+    factura["fecha"] = pedir_fecha() 
     factura["ID"] = input("ID del usuario: ")
     factura["nombre"] = input("nombre: ")
     while True:
@@ -63,7 +61,10 @@ def facturas():
             break
         else:
             print("El teléfono móvil debe contener solo números.")
-    
+            
+######################################################################################
+
+
     factura["Productos"] = {}
     ID_Producto = input("ID del producto")
 
@@ -71,10 +72,19 @@ def facturas():
         factura["Productos"][ID_Producto] = {}
         factura["Productos"][ID_Producto]["Talla"] = Inventario[ID_Producto]["Talla"]
         factura["Productos"][ID_Producto]["precio"] = Inventario[ID_Producto]["precio"]
+        factura["Productos"][ID_Producto]["Costo"] = Inventario[ID_Producto]["costo"]
+        
+        
         factura["Productos"][ID_Producto]["Cantidad"] = int(input("Cantidad del producto: "))
-            
-        factura["Total"] = factura["Productos"][ID_Producto]["Cantidad"] * factura["Productos"][ID_Producto]["precio"]
+        
+        
+        
+        factura["Costo"] = factura["Productos"][ID_Producto]["Cantidad"] * factura["Productos"][ID_Producto]["Costo"]
+        factura["SubTotal"] = factura["Productos"][ID_Producto]["Cantidad"] * factura["Productos"][ID_Producto]["precio"]
+        factura["iva"] = factura["SubTotal"] *0.19
+        factura["Total"] = factura["iva"] + factura["SubTotal"]
         Facturacion[IDFactura] = factura
+        
         guardar_datos(RUTA_JSON_FACTURAS, Facturacion)
 
         Inventario[ID_Producto]["cantidad"] -= factura["Productos"][ID_Producto]["Cantidad"]

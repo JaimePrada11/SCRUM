@@ -11,7 +11,7 @@
     "P002": {
         "descripcion": "CAMISA",
         "Marca": "X",
-        "cantidad": 27,
+        "cantidad": 24,
         "Talla": "S",
         "estado": "Activo",
         "costo": 40,
@@ -20,7 +20,7 @@
     "P003": {
         "descripcion": "CHAQUETA",
         "Marca": "S",
-        "cantidad": 15,
+        "cantidad": 13,
         "Talla": "L",
         "estado": "Activo",
         "costo": 50,
@@ -38,7 +38,7 @@
     "P005": {
         "descripcion": "VESTIDOS",
         "Marca": "X",
-        "cantidad": 14,
+        "cantidad": 11,
         "Talla": "32",
         "estado": "Activo",
         "costo": 50,

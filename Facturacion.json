@@ -28,5 +28,30 @@
             }
         },
         "Total": 210
+    },
+    "F003": {
+        "fecha": "12/12/2024",
+        "ID": "121212",
+        "nombre": "Alejo",
+        "Email": "alripe95@hotmail.com",
+        "Telefono": "3122",
+        "Productos": {
+            "P002": {
+                "Talla": "S",
+                "precio": 60,
+                "Costo": 40,
+                "Cantidad": 3
+            },
+            "P004": {
+                "Talla": "S",
+                "precio": 60,
+                "Costo": 40,
+                "Cantidad": 3
+            }
+        },
+        "Costo": 120,
+        "SubTotal": 180,
+        "iva": 34.2,
+        "Total": 214.2
     }
 }
