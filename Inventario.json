@@ -1,0 +1,65 @@
+{
+    "P001": {
+        "descripcion": "PANTALON",
+        "Marca": "X",
+        "cantidad": 10,
+        "Talla": "30",
+        "estado": "Activo",
+        "costo": 75,
+        "precio": 100
+    },
+    "P002": {
+        "descripcion": "CAMISA",
+        "Marca": "X",
+        "cantidad": 27,
+        "Talla": "S",
+        "estado": "Activo",
+        "costo": 40,
+        "precio": 60
+    },
+    "P003": {
+        "descripcion": "CHAQUETA",
+        "Marca": "S",
+        "cantidad": 15,
+        "Talla": "L",
+        "estado": "Activo",
+        "costo": 50,
+        "precio": 80
+    },
+    "P004": {
+        "descripcion": "PANTALON",
+        "Marca": "LEVIS",
+        "cantidad": 8,
+        "Talla": "32",
+        "estado": "Activo",
+        "costo": 70,
+        "precio": 100
+    },
+    "P005": {
+        "descripcion": "VESTIDOS",
+        "Marca": "X",
+        "cantidad": 14,
+        "Talla": "32",
+        "estado": "Activo",
+        "costo": 50,
+        "precio": 70
+    },
+    "P006": {
+        "descripcion": "GORRO",
+        "Marca": "X",
+        "cantidad": 10,
+        "Talla": "UNICA",
+        "estado": "Activo",
+        "costo": 30,
+        "precio": 50
+    },
+    "P007": {
+        "descripcion": "CAMISETA",
+        "Marca": "H",
+        "cantidad": 7,
+        "Talla": "M",
+        "estado": "Activo",
+        "costo": 35,
+        "precio": 70
+    }
+}

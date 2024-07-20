@@ -1,0 +1,32 @@
+{
+    "F001": {
+        "fecha": "20-07-2024",
+        "ID": "123456",
+        "nombre": "ANDRES",
+        "Email": "J@GMAIL.COM",
+        "Telefono": "321456",
+        "Productos": {
+            "P001": {
+                "Talla": "30",
+                "precio": 100,
+                "Cantidad": 3
+            }
+        },
+        "Total": 300
+    },
+    "F002": {
+        "fecha": "20-07-2024",
+        "ID": "23654",
+        "nombre": "ALEJANDRO",
+        "Email": "J@HOTMAIL.COM",
+        "Telefono": "6547",
+        "Productos": {
+            "P005": {
+                "Talla": "32",
+                "precio": 70,
+                "Cantidad": 3
+            }
+        },
+        "Total": 210
+    }
+}
