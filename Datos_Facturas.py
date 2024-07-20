@@ -16,7 +16,7 @@ def guardar_datos_facturas(facturas):
 
 def cargar_datos_facturas():
     global RUTA_ARCHIVO
-    facturass = []
+    facturas = []
     try:
         with open(RUTA_ARCHIVO, "r") as file:
             datos = json.load(file)
