@@ -11,7 +11,7 @@
     "P002": {
         "descripcion": "CAMISA",
         "Marca": "X",
-        "cantidad": 6,
+        "cantidad": 8,
         "Talla": "S",
         "estado": "Activo",
         "costo": 40,
@@ -24,7 +24,7 @@
         "Talla": "L",
         "estado": "Activo",
         "costo": 50,
-        "precio": 80
+        "precio": 100
     },
     "P004": {
         "descripcion": "PANTALON",
@@ -32,7 +32,7 @@
         "cantidad": 0,
         "Talla": "32",
         "estado": "Activo",
-        "costo": 70,
+        "costo": 50,
         "precio": 100
     },
     "P005": {
@@ -46,7 +46,7 @@
     },
     "P006": {
         "descripcion": "GORRO",
-        "Marca": "X",
+        "Marca": "Tommy",
         "cantidad": 25,
         "Talla": "UNICA",
         "estado": "Activo",
@@ -57,7 +57,7 @@
         "descripcion": "CAMISETA",
         "Marca": "H",
         "cantidad": 0,
-        "Talla": "M",
+        "Talla": "S",
         "estado": "Sin stock",
         "costo": 35,
         "precio": 70
