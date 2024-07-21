@@ -172,35 +172,7 @@ def Cambio_Marca():
 ############################################################################################
 
     
-# def Cambio_Esatdo():
-#     cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
-#     ID_Producto = input("Id del producto")
-#     print("Estado actual del producto")
-#     print(Inventario[ID_Producto]["estado"])
-#     Pregunta_Estado = 
-    
-    
-    
-    
-    
-    
-    
-    
-#     print("Desea cambiar la Marca del Producto ?")
-#     print("Recuerde que la Marca esta ligada al ID del producto")
-#     Pregunta =int(input(" SI desea Marca la Talla 1. para SI  2. Para No 3.Salir"))
-#     if Pregunta == 1:
-#         Marca_nueva= input("Marca a Cambiar:  ")
-#         Inventario[ ID_Producto]["Marca"] = Marca_nueva
-#         guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
-#         print("Informacion Guardada")
-#         print("***********")
-#         return
-#     elif Pregunta == 2:
-#         return
-#     elif Pregunta == 3:
-#         return
-    
+
     
 def cargar_datos(Nombre_Archivo, Tipo):
     try:
@@ -312,4 +284,32 @@ while True:
         print("OCIÓN NO VALIDA, DIGITE UN NÚMERO")
 
 
-mostrar_stock(inventario)
+# def Cambio_Esatdo():
+#     cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
+#     ID_Producto = input("Id del producto")
+#     print("Estado actual del producto")
+#     print(Inventario[ID_Producto]["estado"])
+#     Pregunta_Estado = 
+    
+    
+    
+    
+    
+    
+    
+    
+#     print("Desea cambiar la Marca del Producto ?")
+#     print("Recuerde que la Marca esta ligada al ID del producto")
+#     Pregunta =int(input(" SI desea Marca la Talla 1. para SI  2. Para No 3.Salir"))
+#     if Pregunta == 1:
+#         Marca_nueva= input("Marca a Cambiar:  ")
+#         Inventario[ ID_Producto]["Marca"] = Marca_nueva
+#         guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
+#         print("Informacion Guardada")
+#         print("***********")
+#         return
+#     elif Pregunta == 2:
+#         return
+#     elif Pregunta == 3:
+#         return
+    
