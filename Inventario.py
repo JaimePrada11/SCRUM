@@ -39,6 +39,9 @@ def Registro_prenda_nueva():
 def Cambio_Cantidad():
     cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
     ID_Producto = input("Id del producto")
+    if ID_Producto not in Inventario:
+        print("El ID del producto no existe en el inventario.")
+        return
     print("La cantidad de producto es")
     print(Inventario[ID_Producto]["cantidad"] )
     print("Desea cambiar la cantidad de producto")
@@ -54,6 +57,8 @@ def Cambio_Cantidad():
         return
     elif Pregunta == 3:
         return
+    else:
+        return Cambio_Cantidad()
     
 
 
@@ -63,6 +68,9 @@ def Cambio_Cantidad():
 def Cambio_Precio():
     cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
     ID_Producto = input("Id del producto")
+    if ID_Producto not in Inventario:
+        print("El ID del producto no existe en el inventario.")
+        return
     print("El Precio de producto es")
     print(Inventario[ID_Producto]["precio"] )
     print("Desea cambiar el precio del producto")
@@ -78,12 +86,17 @@ def Cambio_Precio():
         return
     elif Pregunta == 3:
         return
+    else:
+        return Cambio_Precio()
     
 ##############################################################################################
 
 def Cambio_Costo():
     cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
     ID_Producto = input("Id del producto")
+    if ID_Producto not in Inventario:
+        print("El ID del producto no existe en el inventario.")
+        return
     print("El Costo del producto es")
     print(Inventario[ID_Producto]["costo"] )
     print("Desea cambiar el Costo del producto")
@@ -107,6 +120,9 @@ def Cambio_Costo():
 def Cambio_Descripcion():
     cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
     ID_Producto = input("Id del producto")
+    if ID_Producto not in Inventario:
+        print("El ID del producto no existe en el inventario.")
+        return
     print("Descripcion actual del producto")
     print(Inventario[ID_Producto]["descripcion"] )
     print("Desea cambiar la descripcion del Producto ?")
@@ -126,6 +142,9 @@ def Cambio_Descripcion():
 def Cambio_Talla():
     cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
     ID_Producto = input("Id del producto")
+    if ID_Producto not in Inventario:
+        print("El ID del producto no existe en el inventario.")
+        return
     print("Talla actual del producto")
     print(Inventario[ID_Producto]["Talla"] )
     print("Desea cambiar la Talla del Producto ?")
@@ -150,6 +169,9 @@ def Cambio_Talla():
 def Cambio_Marca():
     cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
     ID_Producto = input("Id del producto")
+    if ID_Producto not in Inventario:
+        print("El ID del producto no existe en el inventario.")
+        return
     print("Marca actual del producto")
     print(Inventario[ID_Producto]["Marca"] )
     print("Desea cambiar la Marca del Producto ?")
@@ -174,18 +196,18 @@ def Cambio_Marca():
     
 
     
-def cargar_datos(Nombre_Archivo, Tipo):
-    try:
-        with open(Nombre_Archivo, "r") as file:
-            Diccionario = json.load(file)
-        return Diccionario
-    except FileNotFoundError:
-        if Tipo == "d":
-            return {}
-        elif Tipo == "l":
-            return []
+# def cargar_datos(Nombre_Archivo, Tipo):
+#     try:
+#         with open(Nombre_Archivo, "r") as file:
+#             Diccionario = json.load(file)
+#         return Diccionario
+#     except FileNotFoundError:
+#         if Tipo == "d":
+#             return {}
+#         elif Tipo == "l":
+#             return []
         
-inventario= cargar_datos("Inventario.json","d")
+    inventario= cargar_datos("Inventario.json","d")
 
 def mostrar_stock(inventario):
     print("""
@@ -237,79 +259,99 @@ def mostrar_stock_especifico(inventario, criterio, valor):
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-while True:
-    print("MOSTRAR INVENTARIO")
-    print("*"*70)
-    print('1. Ver información stock total')
-    print('2.Ver información articulo especifico')
-    
-    try:
-        opc = int(input("Digite el número de la opción que desea elegir:  "))
-        if opc == 1:
-            inventario= cargar_datos("Inventario.json","d")
-            mostrar_stock(inventario)
-            continuar=int(input('¿Desea seguir buscando? \n1.Si \n2.No \n'))
-            if continuar == 1:
-                continue
-            elif continuar == 2:
-                print('saliendo...')
-                break
+    while True:
+        print("MOSTRAR INVENTARIO")
+        print("*"*70)
+        print('1. Ver información stock total')
+        print('2.Ver información articulo especifico')
+        
+        try:
+            opc = int(input("Digite el número de la opción que desea elegir:  "))
+            if opc == 1:
+                inventario= cargar_datos("Inventario.json","d")
+                mostrar_stock(inventario)
+                continuar=int(input('¿Desea seguir buscando? \n1.Si \n2.No \n'))
+                if continuar == 1:
+                    continue
+                elif continuar == 2:
+                    print('saliendo...')
+                    break
+                elif opc != 1 or 2:
+                    print('Opción no valida')
+            elif opc == 2:
+                inventario = cargar_datos("Inventario.json","d")
+                criterios = ['codigo','descripcion','Marca','cantidad','Talla','estado','costo','precio']
+                n = 0
+                for i in criterios:
+                    n = n+1
+                    print(n,i)
+                eleccion = int(input('Digite el número de la opción que desea elegir: '))
+                eleccion = eleccion-1
+                elegido = criterios[eleccion]
+                criterio = str(elegido)
+                valor = input(f'Escriba la descripción que se encuentra en {criterios[eleccion]}:  ')
+                mostrar_stock_especifico(inventario, criterio, valor)
+                continuar=int(input('¿Desea seguir buscando? \n1.Si \n2.No \n'))
+                if continuar == 1:
+                    continue
+                elif continuar == 2:
+                    print('saliendo...')
+                    break
+                elif opc != 1 or 2:
+                    print('Opción no valida')
+                
             elif opc != 1 or 2:
                 print('Opción no valida')
-        elif opc == 2:
-            inventario = cargar_datos("Inventario.json","d")
-            criterios = ['codigo','descripcion','Marca','cantidad','Talla','estado','costo','precio']
-            n = 0
-            for i in criterios:
-                n = n+1
-                print(n,i)
-            eleccion = int(input('Digite el número de la opción que desea elegir: '))
-            eleccion = eleccion-1
-            elegido = criterios[eleccion]
-            criterio = str(elegido)
-            valor = input(f'Escriba la descripción que se encuentra en {criterios[eleccion]}:  ')
-            mostrar_stock_especifico(inventario, criterio, valor)
-            continuar=int(input('¿Desea seguir buscando? \n1.Si \n2.No \n'))
-            if continuar == 1:
-                continue
-            elif continuar == 2:
-                print('saliendo...')
-                break
-            elif opc != 1 or 2:
-                print('Opción no valida')
-            
-        elif opc != 1 or 2:
-            print('Opción no valida')
-    except ValueError:
-        print("OCIÓN NO VALIDA, DIGITE UN NÚMERO")
+        except ValueError:
+            print("OCIÓN NO VALIDA, DIGITE UN NÚMERO")
 
 
-# def Cambio_Esatdo():
-#     cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
-#     ID_Producto = input("Id del producto")
-#     print("Estado actual del producto")
-#     print(Inventario[ID_Producto]["estado"])
-#     Pregunta_Estado = 
+def Verificar_Esatdo():
+    cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
+    ID_Producto = input("Id del producto:  ")
+    if ID_Producto not in Inventario:
+        print("El ID del producto no existe en el inventario.")
+        return
+
+    if Inventario[ID_Producto]["cantidad"] > 0:
+        print("Estados Activo")
+        Inventario[ID_Producto]["estado"]="Activo"
+        guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
+        print("Informacion Guardada")
+        print("***********")
+        
+        return
+    if Inventario[ID_Producto]["cantidad"] == 0:
+        print("Estado del producto sin stock")
+        Pregunta_Estado = int(input("1. Para Agregar elementos  2.Para Descontinuar el producto  3.Para Salir"))
+        if Pregunta_Estado == 1:
+            Cambio_Cantidad()
+            return
+        if Pregunta_Estado == 2:
+            if Inventario[ID_Producto]["cantidad"]> 0:
+                print("Para descontinuar la cantidad tiene que ser 0")
+                return Verificar_Esatdo()
+            if Inventario[ID_Producto]["cantidad"]== 0:
+                Inventario[ID_Producto]["estado"]="Descontinuado"
+                guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
+                print("Informacion Guardada")
+                print("***********")
+            else:
+                Verificar_Esatdo()  
+        
+        if Pregunta_Estado ==3:
+            return
+        else:
+            return  Verificar_Esatdo()  
+                
+        
+       
+    
+        
+Verificar_Esatdo()
+        
     
     
     
-    
-    
-    
-    
-    
-#     print("Desea cambiar la Marca del Producto ?")
-#     print("Recuerde que la Marca esta ligada al ID del producto")
-#     Pregunta =int(input(" SI desea Marca la Talla 1. para SI  2. Para No 3.Salir"))
-#     if Pregunta == 1:
-#         Marca_nueva= input("Marca a Cambiar:  ")
-#         Inventario[ ID_Producto]["Marca"] = Marca_nueva
-#         guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
-#         print("Informacion Guardada")
-#         print("***********")
-#         return
-#     elif Pregunta == 2:
-#         return
-#     elif Pregunta == 3:
-#         return
+
     

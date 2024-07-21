@@ -56,9 +56,9 @@
     "P007": {
         "descripcion": "CAMISETA",
         "Marca": "H",
-        "cantidad": 0,
+        "cantidad": 10,
         "Talla": "S",
-        "estado": "Sin stock",
+        "estado": "Activo",
         "costo": 35,
         "precio": 70
     }
