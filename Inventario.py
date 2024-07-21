@@ -37,158 +37,204 @@ def Registro_prenda_nueva():
 
 ###############################################################################################
 def Cambio_Cantidad():
+    print("""𝕄𝕠𝕕𝕚𝕗𝕚𝕔𝕒𝕔𝕚𝕠𝕟 𝕕𝕖 𝕔𝕒𝕟𝕥𝕚𝕕𝕒𝕕""")
+    
     cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
-    ID_Producto = input("Id del producto")
+    ID_Producto = input("Id del producto: ")
     if ID_Producto not in Inventario:
         print("El ID del producto no existe en el inventario.")
         return
-    print("La cantidad de producto es")
-    print(Inventario[ID_Producto]["cantidad"] )
-    print("Desea cambiar la cantidad de producto")
-    Pregunta =int(input(" SI desea cambiar la cantidad 1. para SI  2. Para No 3.Salir"))
-    if Pregunta == 1:
-        Cantidad_Nueva= int(input("Cantidad de articulos ha Cambiar:  "))
-        Inventario[ ID_Producto]["cantidad"] = Cantidad_Nueva 
-        guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
-        print("Informacion Guardada")
-        print("***********")
-        return
-    elif Pregunta == 2:
-        return
-    elif Pregunta == 3:
-        return
-    else:
-        return Cambio_Cantidad()
+    print("La cantidad de producto es:")
+    print(Inventario[ID_Producto]["cantidad"])
+    print("¿Desea cambiar la cantidad de producto?")
     
+    try:
+        Pregunta = int(input("Si desea cambiar la cantidad, ingrese 1 para SI, 2 para NO, 3 para Salir: "))
+        if Pregunta == 1:
+            try:
+                Cantidad_Nueva = int(input("Nueva cantidad de artículos: "))
+                Inventario[ID_Producto]["cantidad"] = Cantidad_Nueva
+                guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
+                print("Información guardada")
+                print("***********")
+            except ValueError:
+                print("Entrada no válida, la cantidad debe ser un número entero.")
+        elif Pregunta == 2:
+            print("No se realizaron cambios.")
+        elif Pregunta == 3:
+            print("Saliendo sin cambios.")
+        else:
+            print("Opción no válida.")
+    except ValueError:
+        print("Entrada no válida, por favor ingrese un número válido.")
+    except Exception as e:
+        print(f"Se produjo un error: {e}")
 
 
 #####################################################################
 
-
 def Cambio_Precio():
+    print("""ℂ𝔸𝕄𝔹𝕀𝕆 𝔻𝔼 ℙℝ𝔼ℂ𝕀𝕆""")
+    
     cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
-    ID_Producto = input("Id del producto")
+    ID_Producto = input("Id del producto: ")
     if ID_Producto not in Inventario:
         print("El ID del producto no existe en el inventario.")
         return
-    print("El Precio de producto es")
-    print(Inventario[ID_Producto]["precio"] )
-    print("Desea cambiar el precio del producto")
-    Pregunta =int(input(" SI desea cambiar el precio 1. para SI  2. Para No 3.Salir"))
-    if Pregunta == 1:
-        precio_nuevo= int(input("Precio a Cambiar:  "))
-        Inventario[ ID_Producto]["precio"] = precio_nuevo 
-        guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
-        print("Informacion Guardada")
-        print("***********")
-        return
-    elif Pregunta == 2:
-        return
-    elif Pregunta == 3:
-        return
-    else:
-        return Cambio_Precio()
+    print("El precio actual del producto es:")
+    print(Inventario[ID_Producto]["precio"])
+    print("¿Desea cambiar el precio del producto?")
     
-##############################################################################################
+    try:
+        Pregunta = int(input("Si desea cambiar el precio, ingrese 1 para SI, 2 para NO, 3 para Salir: "))
+        if Pregunta == 1:
+            try:
+                precio_nuevo = float(input("Nuevo precio: "))
+                Inventario[ID_Producto]["precio"] = precio_nuevo
+                guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
+                print("Información guardada")
+                print("***********")
+            except ValueError:
+                print("Entrada no válida, el precio debe ser un número.")
+        elif Pregunta == 2:
+            print("No se realizaron cambios.")
+        elif Pregunta == 3:
+            print("Saliendo sin cambios.")
+        else:
+            print("Opción no válida.")
+    except ValueError:
+        print("Entrada no válida, por favor ingrese un número.")
+    
+
 
 def Cambio_Costo():
+    print("""ℂ𝔸𝕄𝔹𝕀𝕆 𝔻𝔼 ℂ𝕆𝕊𝕋𝕆""")
     cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
-    ID_Producto = input("Id del producto")
+    ID_Producto = input("Id del producto: ")
     if ID_Producto not in Inventario:
         print("El ID del producto no existe en el inventario.")
         return
-    print("El Costo del producto es")
-    print(Inventario[ID_Producto]["costo"] )
-    print("Desea cambiar el Costo del producto")
-    Pregunta =int(input(" SI desea cambiar el costo 1. para SI  2. Para No 3.Salir"))
-    if Pregunta == 1:
-        Costo_nuevo= int(input("Costo a Cambiar:  "))
-        Inventario[ ID_Producto]["costo"] = Costo_nuevo 
-        guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
-        print("Informacion Guardada")
-        print("***********")
-        return
-    elif Pregunta == 2:
-        return
-    elif Pregunta == 3:
-        return
+
+    print("El costo actual del producto es:")
+    print(Inventario[ID_Producto]["costo"])
+    print("¿Desea cambiar el costo del producto?")
+    
+    try:
+        Pregunta = int(input("Si desea cambiar el costo, ingrese 1 para SI, 2 para NO, 3 para Salir: "))
+        if Pregunta == 1:
+            try:
+                Costo_nuevo = float(input("Nuevo costo: "))
+                Inventario[ID_Producto]["costo"] = Costo_nuevo
+                guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
+                print("Información guardada")
+                print("***********")
+            except ValueError:
+                print("Entrada no válida, el costo debe ser un número.")
+        elif Pregunta == 2:
+            print("No se realizaron cambios.")
+        elif Pregunta == 3:
+            print("Saliendo sin cambios.")
+        else:
+            print("Opción no válida.")
+    except ValueError:
+        print("Entrada no válida, por favor ingrese un número.")
     
     
 ##############################################################################
 
 
 def Cambio_Descripcion():
+    print("""ℂ𝔸𝕄𝔹𝕀𝕆 𝔻𝔼 𝔻 𝔼 𝕊 ℂ ℝ 𝕀 ℙ ℂ 𝕀 𝕆 ℕ""")
     cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
-    ID_Producto = input("Id del producto")
+    ID_Producto = input("Id del producto: ")
     if ID_Producto not in Inventario:
         print("El ID del producto no existe en el inventario.")
         return
-    print("Descripcion actual del producto")
-    print(Inventario[ID_Producto]["descripcion"] )
-    print("Desea cambiar la descripcion del Producto ?")
-    Pregunta =int(input(" SI desea cambiar la descripcion 1. para SI  2. Para No 3.Salir"))
-    if Pregunta == 1:
-        descripcion_nueva= int(input("Descripcion a Cambiar:  "))
-        Inventario[ ID_Producto]["descripcion"] = descripcion_nueva
-        guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
-        print("Informacion Guardada")
-        print("***********")
-        return
-    elif Pregunta == 2:
-        return
-    elif Pregunta == 3:
-        return
+
+    print("Descripción actual del producto:")
+    print(Inventario[ID_Producto]["descripcion"])
+    print("¿Desea cambiar la descripción del Producto?")
+    
+    try:
+        Pregunta = int(input("Si desea cambiar la descripción, ingrese 1 para SI, 2 para NO, 3 para Salir: "))
+        if Pregunta == 1:
+            descripcion_nueva = input("Nueva descripción: ")
+            Inventario[ID_Producto]["descripcion"] = descripcion_nueva
+            guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
+            print("Información guardada")
+            print("***********")
+        elif Pregunta == 2:
+            print("No se realizaron cambios.")
+        elif Pregunta == 3:
+            print("Saliendo sin cambios.")
+        else:
+            print("Opción no válida.")
+    except ValueError:
+        print("Entrada no válida, por favor ingrese un número.")
 ##########################################################################################
 def Cambio_Talla():
+    print("""ℂ𝔸𝕄𝔹𝕀𝕆 𝔻𝔼 𝕋𝔸𝕃𝕃𝔸""")
     cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
-    ID_Producto = input("Id del producto")
+    ID_Producto = input("Id del producto: ")
     if ID_Producto not in Inventario:
         print("El ID del producto no existe en el inventario.")
         return
-    print("Talla actual del producto")
-    print(Inventario[ID_Producto]["Talla"] )
-    print("Desea cambiar la Talla del Producto ?")
-    print("Recuerde que la talla esta ligada al ID del producto")
-    Pregunta =int(input(" SI desea cambiar la Talla 1. para SI  2. Para No 3.Salir"))
-    if Pregunta == 1:
-        Talla_nueva= input("Talla a Cambiar:  ")
-        Inventario[ ID_Producto]["Talla"] = Talla_nueva
-        guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
-        print("Informacion Guardada")
-        print("***********")
-        return
-    elif Pregunta == 2:
-        return
-    elif Pregunta == 3:
-        return
+    
+    print("Talla actual del producto:")
+    print(Inventario[ID_Producto]["Talla"])
+    print("¿Desea cambiar la Talla del Producto?")
+    print("Recuerde que la talla está ligada al ID del producto.")
+    
+    try:
+        Pregunta = int(input("Si desea cambiar la Talla, ingrese 1. para SI, 2. Para NO, 3. Salir: "))
+        if Pregunta == 1:
+            Talla_nueva = input("Talla a Cambiar: ")
+            Inventario[ID_Producto]["Talla"] = Talla_nueva
+            guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
+            print("Información Guardada")
+            print("***********")
+        elif Pregunta == 2:
+            print("No se realizaron cambios.")
+        elif Pregunta == 3:
+            print("Saliendo sin cambios.")
+        else:
+            print("Opción no válida.")
+    except ValueError:
+        print("Entrada no válida, por favor ingrese un número.")
     
     
 
     
 ##################################################################################
 def Cambio_Marca():
+    print("""ℂ𝔸𝕄𝔹𝕀𝕆 𝔻𝔼 𝕄𝔸ℝℂ𝔸""")
     cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
-    ID_Producto = input("Id del producto")
+    ID_Producto = input("Id del producto: ")
     if ID_Producto not in Inventario:
         print("El ID del producto no existe en el inventario.")
         return
-    print("Marca actual del producto")
-    print(Inventario[ID_Producto]["Marca"] )
-    print("Desea cambiar la Marca del Producto ?")
-    print("Recuerde que la Marca esta ligada al ID del producto")
-    Pregunta =int(input(" SI desea Marca la Talla 1. para SI  2. Para No 3.Salir"))
-    if Pregunta == 1:
-        Marca_nueva= input("Marca a Cambiar:  ")
-        Inventario[ ID_Producto]["Marca"] = Marca_nueva
-        guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
-        print("Informacion Guardada")
-        print("***********")
-        return
-    elif Pregunta == 2:
-        return
-    elif Pregunta == 3:
-        return
     
+    print("Marca actual del producto:")
+    print(Inventario[ID_Producto]["Marca"])
+    print("¿Desea cambiar la Marca del Producto?")
+    print("Recuerde que la Marca está ligada al ID del producto.")
+    
+    try:
+        Pregunta = int(input("Si desea cambiar la Marca, ingrese 1. para SI, 2. Para NO, 3. Salir: "))
+        if Pregunta == 1:
+            Marca_nueva = input("Marca a Cambiar: ")
+            Inventario[ID_Producto]["Marca"] = Marca_nueva
+            guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
+            print("Información Guardada")
+            print("***********")
+        elif Pregunta == 2:
+            print("No se realizaron cambios.")
+        elif Pregunta == 3:
+            print("Saliendo sin cambios.")
+        else:
+            print("Opción no válida.")
+    except ValueError:
+        print("Entrada no válida, por favor ingrese un número.")
     
 
 ############################################################################################
@@ -306,51 +352,53 @@ def mostrar_stock_especifico(inventario, criterio, valor):
             print("OCIÓN NO VALIDA, DIGITE UN NÚMERO")
 
 
+        
+        
+###################################################################
+
 def Verificar_Esatdo():
+    print("""𝕍𝔼ℝ𝕀𝔽𝕀ℂ𝔸ℝ 𝔼𝕊𝕋𝔸𝔻𝕆""")
+    
     cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
-    ID_Producto = input("Id del producto:  ")
+    ID_Producto = input("Id del producto: ")
     if ID_Producto not in Inventario:
         print("El ID del producto no existe en el inventario.")
         return
 
     if Inventario[ID_Producto]["cantidad"] > 0:
-        print("Estados Activo")
-        Inventario[ID_Producto]["estado"]="Activo"
+        print("Estado: Activo")
+        Inventario[ID_Producto]["estado"] = "Activo"
         guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
-        print("Informacion Guardada")
+        print("Información guardada")
         print("***********")
-        
         return
-    if Inventario[ID_Producto]["cantidad"] == 0:
-        print("Estado del producto sin stock")
-        Pregunta_Estado = int(input("1. Para Agregar elementos  2.Para Descontinuar el producto  3.Para Salir"))
-        if Pregunta_Estado == 1:
-            Cambio_Cantidad()
-            return
-        if Pregunta_Estado == 2:
-            if Inventario[ID_Producto]["cantidad"]> 0:
-                print("Para descontinuar la cantidad tiene que ser 0")
-                return Verificar_Esatdo()
-            if Inventario[ID_Producto]["cantidad"]== 0:
-                Inventario[ID_Producto]["estado"]="Descontinuado"
+    elif Inventario[ID_Producto]["cantidad"] == 0:
+        print("Estado del producto: Sin stock")
+        try:
+            Pregunta_Estado = int(input("1. Para agregar elementos 2. Para descontinuar el producto 3. Para salir: "))
+            if Pregunta_Estado == 1:
+                Cambio_Cantidad()
+                return
+            elif Pregunta_Estado == 2:
+                Inventario[ID_Producto]["estado"] = "Descontinuado"
                 guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
-                print("Informacion Guardada")
+                print("Información guardada")
                 print("***********")
+            elif Pregunta_Estado == 3:
+                return
             else:
-                Verificar_Esatdo()  
-        
-        if Pregunta_Estado ==3:
-            return
-        else:
-            return  Verificar_Esatdo()  
-                
-        
-       
+                print("Opción no válida.")
+                Verificar_Esatdo()
+        except ValueError:
+            print("Entrada no válida, por favor ingrese un número.")
+            Verificar_Esatdo()
+    else:
+        print("Cantidad no válida en el inventario.")
     
         
-Verificar_Esatdo()
+
         
-    
+
     
     
 
