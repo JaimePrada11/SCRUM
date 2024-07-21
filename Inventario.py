@@ -54,12 +54,6 @@ def Cambio_Cantidad():
         return
     elif Pregunta == 3:
         return
-        
-        
-    
-    
-    
-    
     
 def Cambio_Cantidad():
     cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
@@ -80,7 +74,7 @@ def Cambio_Cantidad():
     elif Pregunta == 3:
         return  
 
-#################################################
+#####################################################################
 
 
 def Cambio_Precio():
@@ -169,7 +163,7 @@ def Cambio_Talla():
     
 
     
-    
+##################################################################################
 def Cambio_Talla():
     cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
     ID_Producto = input("Id del producto")
@@ -191,4 +185,6 @@ def Cambio_Talla():
         return
     
     
-Cambio_Talla()
+
+    
+    
