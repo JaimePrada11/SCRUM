@@ -24,5 +24,4 @@ def modifi(RUTA_ARCHIVO):
             print("\u001b[38;5;196mID de camper no encontrado.\u001b[0m")
     else:
         print("Archivo campus.json no encontrado.")
-
                 

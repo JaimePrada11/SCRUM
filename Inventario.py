@@ -36,6 +36,3 @@ def Registro_prenda_nueva():
     print("***********")
 
 
-
-
-Registro_prenda_nueva()

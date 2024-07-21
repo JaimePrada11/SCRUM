@@ -52,6 +52,221 @@
         "Costo": 120,
         "SubTotal": 180,
         "iva": 34.2,
-        "Total": 214.2
+        "descuento": 4.2,
+        "Total": 210
+    },
+    "F004": {
+        "fecha": "20/07/2024",
+        "ID": "ANDRES",
+        "nombre": "J@GMAIL.COM",
+        "Email": "J@GAMI.COM",
+        "Telefono": "3214",
+        "Productos": {
+            "P001": {
+                "Talla": "30",
+                "precio": 200,
+                "Costo": 100,
+                "Cantidad": 2
+            },
+            "P004": {
+                "Talla": "32",
+                "precio": 100,
+                "Costo": 70,
+                "Cantidad": 5
+            },
+            "P007": {
+                "Talla": "M",
+                "precio": 70,
+                "Costo": 35,
+                "Cantidad": 5
+            }
+        },
+        "Costo": 725,
+        "SubTotal": 1250,
+        "descuento": 250.0,
+        "iva": 190.0,
+        "Total": 1190.0
+    },
+    "F005": {
+        "fecha": "21/07/2024",
+        "ID": "32456",
+        "nombre": "andres",
+        "Email": "J@HOTMAIL.COM",
+        "Telefono": "3256",
+        "Productos": {
+            "P001": {
+                "Talla": "30",
+                "precio": 200,
+                "Costo": 100,
+                "Cantidad": 8
+            }
+        },
+        "Costo": 800,
+        "SubTotal": 1600,
+        "descuento": 0.0,
+        "iva": 304.0,
+        "Total": 1904.0
+    },
+    "F006": {
+        "fecha": "25/07/2024",
+        "ID": "3654",
+        "nombre": "EDUARD",
+        "Email": "JANDR@HOTMAIL.COM",
+        "Telefono": "321456987",
+        "Productos": {
+            "P004": {
+                "Talla": "32",
+                "precio": 100,
+                "Costo": 70,
+                "Cantidad": 3
+            },
+            "P005": {
+                "Talla": "32",
+                "precio": 70,
+                "Costo": 50,
+                "Cantidad": 11
+            },
+            "P007": {
+                "Talla": "M",
+                "precio": 70,
+                "Costo": 35,
+                "Cantidad": 2
+            }
+        },
+        "Costo": 830,
+        "SubTotal": 1210,
+        "descuento": 0.0,
+        "iva": 229.9,
+        "Total": 1439.9
+    },
+    "F007": {
+        "fecha": "20/07/2024",
+        "ID": "321456",
+        "nombre": "ANDRES",
+        "Email": "J@GMAIL.COM",
+        "Telefono": "3011778698",
+        "Productos": {
+            "P006": {
+                "Talla": "UNICA",
+                "precio": 50,
+                "Costo": 30,
+                "Cantidad": 5
+            }
+        },
+        "Costo": 150,
+        "SubTotal": 250,
+        "descuento": 37.5,
+        "iva": 40.375,
+        "Total": 252.875
+    },
+    "F008": {
+        "fecha": "20/07/2024",
+        "ID": "321456",
+        "nombre": "CAMILA",
+        "Email": "J@GMAIL.COM",
+        "Telefono": "369874521",
+        "Productos": {
+            "P002": {
+                "Talla": "S",
+                "precio": 60,
+                "Costo": 40,
+                "Cantidad": 10
+            },
+            "P003": {
+                "Talla": "L",
+                "precio": 80,
+                "Costo": 50,
+                "Cantidad": 4
+            }
+        },
+        "Costo": 600,
+        "SubTotal": 920,
+        "descuento": 460.0,
+        "iva": 87.4,
+        "Total": 547.4
+    },
+    "F009": {
+        "fecha": "30/07/2024",
+        "ID": "123456",
+        "nombre": "ANDRES",
+        "Email": "J@GMAIL.COM",
+        "Telefono": "369874521",
+        "Productos": {
+            "P002": {
+                "Talla": "S",
+                "precio": 60,
+                "Costo": 40,
+                "Cantidad": 5
+            }
+        },
+        "Costo": 200,
+        "SubTotal": 300,
+        "descuento": 0.0,
+        "iva": 57.0,
+        "Total": 357.0
+    },
+    "F010": {
+        "fecha": "21/07/2024",
+        "ID": "365412",
+        "nombre": "ANDRES",
+        "Email": "J@GMAIL.COM",
+        "Telefono": "1245789",
+        "Productos": {
+            "P001": {
+                "Talla": "30",
+                "precio": 200,
+                "Costo": 100,
+                "Cantidad": 10
+            },
+            "P002": {
+                "Talla": "S",
+                "precio": 60,
+                "Costo": 40,
+                "Cantidad": 3
+            },
+            "P003": {
+                "Talla": "L",
+                "precio": 80,
+                "Costo": 50,
+                "Cantidad": 1
+            },
+            "P005": {
+                "Talla": "32",
+                "precio": 70,
+                "Costo": 50,
+                "Cantidad": 2
+            },
+            "P007": {
+                "Talla": "M",
+                "precio": 70,
+                "Costo": 35,
+                "Cantidad": 10
+            }
+        },
+        "Costo": 1620,
+        "SubTotal": 3100,
+        "descuento": 930.0,
+        "iva": 412.3,
+        "Total": 2582.3
+    },
+    "F011": {
+        "fecha": "21/07/2024",
+        "ID": "12345",
+        "nombre": "PRADA",
+        "Email": "J@GMAIL.COM",
+        "Telefono": "301177865",
+        "Productos": {
+            "P005": {
+                "Talla": "32",
+                "precio": 70,
+                "Costo": 50,
+                "Cantidad": 3
+            }
+        },
+        "Costo": 150,
+        "SubTotal": 210,
+        "descuento": 0.0,
+        "iva": 39.9,
+        "Total": 249.9
     }
 }
