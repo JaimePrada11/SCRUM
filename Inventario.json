@@ -4,9 +4,9 @@
         "Marca": "X",
         "cantidad": 10,
         "Talla": "30",
-        "estado": "Activo",
-        "costo": 75,
-        "precio": 100
+        "estado": "Descontinuado",
+        "costo": "100",
+        "precio": "200"
     },
     "P002": {
         "descripcion": "CAMISA",
