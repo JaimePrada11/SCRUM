@@ -21,7 +21,7 @@ def modifi(RUTA_ARCHIVO):
                 json.dump(elementos, archivo_json, indent=4)
             print("\u001b[38;5;10mInformación actualizada.\u001b[0m")   
         else:
-            print("\u001b[38;5;196mID de camper no encontrado.\u001b[0m")
+            print("\u001b[38;5;196mID de elemento no encontrado.\u001b[0m")
     else:
-        print("Archivo campus.json no encontrado.")
+        print("Archivo inventario.json no encontrado.")
                 
