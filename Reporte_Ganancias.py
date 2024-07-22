@@ -1,22 +1,26 @@
 import json
 from datetime import datetime
+from Datos import *
+
+facturacion = Facturacion
 #FUNCION GANANCIAS
 
-def cargar_datos(Nombre_Archivo, Tipo):
-    try:
-        with open(Nombre_Archivo, "r") as file:
-            Diccionario = json.load(file)
-        return Diccionario
-    except FileNotFoundError:
-        if Tipo == "d":
-            return {}
-        elif Tipo == "l":
-            return []
+# def cargar_datos(Nombre_Archivo, Tipo):
+#     try:
+#         with open(Nombre_Archivo, "r") as file:
+#             Diccionario = json.load(file)
+#         return Diccionario
+#     except FileNotFoundError:
+#         if Tipo == "d":
+#             return {}
+#         elif Tipo == "l":
+#             return []
         
-facturacion = cargar_datos ('Facturacion.json','d')
+# facturacion = cargar_datos ('Facturacion.json','d')
 
 
 def calcular_ganancia(facturacion, criterio, valor1, valor2=None):
+    cargar_datos(RUTA_JSON_FACTURAS, facturacion)
     ganancia_total = 0.0
     
     def calcular_ganancia_factura(facturacion):
@@ -99,7 +103,6 @@ def escoger_gananacias():
                     mes = input("Ingrese el mes y año (mm/aaaa): ")
                     try:
                         ganancia = calcular_ganancia(facturacion, 'mes', mes)
-                        print(f"Ganancia por mes {mes}: {ganancia}")
                     except ValueError:
                         print("Formato de mes incorrecto. Use el formato mm/aaaa.")
                 
@@ -123,4 +126,5 @@ def escoger_gananacias():
             
             except Exception as e:
                 print(f"Se produjo un error: {e}")
+                
 

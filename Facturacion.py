@@ -187,4 +187,3 @@ def facturas():
         print(f"Error al procesar la factura: {e}")
 
 
-facturas()

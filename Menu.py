@@ -50,7 +50,7 @@ def menu_Admin():
 
 def menu_Actualizar():
     print("************************************************************")
-    print("                     CAMBIO DE TALLA")
+    print("                     MENU DE ACTUALIZACION")
     print("************************************************************\n")
     while True:
         print("Selecciona ----->")

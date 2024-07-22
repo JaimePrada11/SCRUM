@@ -9,13 +9,13 @@
         "precio": 150
     },
     "P002": {
-        "descripcion": "CAMISA",
+        "descripcion": "pantalon",
         "Marca": "X",
         "cantidad": 8,
         "Talla": "S",
         "estado": "Activo",
         "costo": 40,
-        "precio": 100
+        "precio": 200.0
     },
     "P003": {
         "descripcion": "CHAQUETA",
@@ -56,9 +56,9 @@
     "P007": {
         "descripcion": "CAMISETA",
         "Marca": "H",
-        "cantidad": 3,
+        "cantidad": 0,
         "Talla": "M",
-        "estado": "Activo",
+        "estado": "Sin Stock",
         "costo": 35,
         "precio": 70
     },

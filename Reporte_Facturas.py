@@ -1,19 +1,8 @@
 import json
 from datetime import datetime
+from Datos import *
 
-def cargar_datos(Nombre_Archivo, Tipo):
-    try:
-        with open(Nombre_Archivo, "r") as file:
-            Diccionario = json.load(file)
-        return Diccionario
-    except FileNotFoundError:
-        print(f"El archivo {Nombre_Archivo} no se encontró. Se creará un diccionario vacío.")
-        if Tipo == "d":
-            return {}
-        elif Tipo == "l":
-            return []
-
-facturacion = cargar_datos('Facturacion.json', 'd')
+facturacion = Facturacion
 
 def validar_fecha(fecha_str):
     try:
@@ -37,6 +26,7 @@ def validar_anio(anio_str):
         return False
 
 def mostrar_facturas_con_productos(facturacion, criterio, valor):
+    cargar_datos(RUTA_JSON_FACTURAS, facturacion)
     encontrados = []
 
     for factura_id, factura_detalles in facturacion.items():
