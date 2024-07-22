@@ -162,12 +162,22 @@ def facturas():
             factura["descuento"] = descuento_monto
             factura["iva"] = subtotal_con_descuento * 0.19
             factura["Total"] = subtotal_con_descuento + factura["iva"]
-
+            
             Facturacion[IDFactura] = factura
+            
             try:
                 guardar_datos(RUTA_JSON_FACTURAS, Facturacion)
                 guardar_datos(Ruta_JSON_INVENTARIO , Inventario)
                 print("Factura creada exitosamente.")
+                print("\n************************************************************")
+                print("                   DETALLES DE LA FACTURA")
+                print("************************************************************")
+                print(f"ID: {IDFactura}")
+                print(f"Subtotal: {factura['SubTotal']}")
+                print(f"Descuento: {factura['descuento']}")
+                print(f"IVA: {factura['iva']}")
+                print(f"Total: {factura['Total']}")
+                
             except IOError as e:
                 print(f"Error al guardar los datos: {e}")
         else:
@@ -177,3 +187,4 @@ def facturas():
         print(f"Error al procesar la factura: {e}")
 
 
+facturas()

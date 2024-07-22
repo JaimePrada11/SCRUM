@@ -370,5 +370,91 @@
         "descuento": 0.0,
         "iva": 71.25,
         "Total": 446.25
+    },
+    "F016": {
+        "fecha": "22/07/2024",
+        "ID": "321458",
+        "nombre": "ANDRES",
+        "Email": "J@G.COM",
+        "Telefono": "22222222",
+        "Productos": {
+            "P005": {
+                "Talla": "32",
+                "precio": 70,
+                "Costo": 50,
+                "Cantidad": 2
+            },
+            "P001": {
+                "Talla": "30",
+                "precio": 150,
+                "Costo": 100,
+                "Cantidad": 3
+            }
+        },
+        "Costo": 400,
+        "SubTotal": 590,
+        "descuento": 118.0,
+        "iva": 89.68,
+        "Total": 561.6800000000001
+    },
+    "F017": {
+        "fecha": "12/12/2024",
+        "ID": "10958",
+        "nombre": "ALEJO",
+        "Email": "A@R.COM",
+        "Telefono": "31788764",
+        "Productos": {
+            "P007": {
+                "Talla": "M",
+                "precio": 70,
+                "Costo": 35,
+                "Cantidad": 1
+            }
+        },
+        "Costo": 35,
+        "SubTotal": 70,
+        "descuento": 3.5,
+        "iva": 12.635,
+        "Total": 79.135
+    },
+    "F018": {
+        "fecha": "22/07/2024",
+        "ID": "109582499",
+        "nombre": "ALEJO",
+        "Email": "A@D.COM",
+        "Telefono": "5151651515",
+        "Productos": {
+            "P006": {
+                "Talla": "UNICA",
+                "precio": 50,
+                "Costo": 30,
+                "Cantidad": 1
+            }
+        },
+        "Costo": 30,
+        "SubTotal": 50,
+        "descuento": 0.0,
+        "iva": 9.5,
+        "Total": 59.5
+    },
+    "F019": {
+        "fecha": "22/07/2024",
+        "ID": "1095824299",
+        "nombre": "ALEJO",
+        "Email": "A@F.COM",
+        "Telefono": "3178876402",
+        "Productos": {
+            "P007": {
+                "Talla": "M",
+                "precio": 70,
+                "Costo": 35,
+                "Cantidad": 1
+            }
+        },
+        "Costo": 35,
+        "SubTotal": 70,
+        "descuento": 3.5,
+        "iva": 12.635,
+        "Total": 79.135
     }
 }

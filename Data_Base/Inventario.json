@@ -2,7 +2,7 @@
     "P001": {
         "descripcion": "PANTALON",
         "Marca": "X",
-        "cantidad": 7,
+        "cantidad": 4,
         "Talla": "30",
         "estado": "Activo",
         "costo": 100,
@@ -38,7 +38,7 @@
     "P005": {
         "descripcion": "VESTIDO",
         "Marca": "X",
-        "cantidad": 20,
+        "cantidad": 18,
         "Talla": "32",
         "estado": "Activo",
         "costo": 50,
@@ -47,7 +47,7 @@
     "P006": {
         "descripcion": "GORRO",
         "Marca": "TOMMY",
-        "cantidad": 20,
+        "cantidad": 19,
         "Talla": "UNICA",
         "estado": "Activo",
         "costo": 30,
@@ -56,7 +56,7 @@
     "P007": {
         "descripcion": "CAMISETA",
         "Marca": "H",
-        "cantidad": 5,
+        "cantidad": 3,
         "Talla": "M",
         "estado": "Activo",
         "costo": 35,
