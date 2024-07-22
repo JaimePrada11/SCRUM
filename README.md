@@ -1,4 +1,3 @@
-```markdown
 # Scrum Pruebas
 
 Este proyecto es una implementación de un sistema de gestión que incluye funcionalidades de facturación e inventario.
@@ -7,7 +6,7 @@ Este proyecto es una implementación de un sistema de gestión que incluye funci
 
 El proyecto está organizado de la siguiente manera:
 
-```
+
 Scrum_Pruebas-main/
 ├── Datos.py
 ├── Facturacion.json
@@ -17,19 +16,19 @@ Scrum_Pruebas-main/
 ├── Menu.py
 ├── main.py
 ├── Modulos/
-│   ├── modificar_datos.py
-│   └── __pycache__/
-│       ├── modificar_datos.cpython-311.pyc
-│       └── modificar_datos.cpython-312.pyc
-└── __pycache__/
-    ├── Datos.cpython-312.pyc
-    ├── DatosItems.cpython-312.pyc
-    ├── Datos_Elementos.cpython-312.pyc
-    ├── Datos_Facturas.cpython-312.pyc
-    ├── Facturacion.cpython-312.pyc
-    ├── Inventario.cpython-312.pyc
-    └── Menu.cpython-312.pyc
-```
+│ ├── modificar_datos.py
+│ └── pycache/
+│ ├── modificar_datos.cpython-311.pyc
+│ └── modificar_datos.cpython-312.pyc
+└── pycache/
+├── Datos.cpython-312.pyc
+├── DatosItems.cpython-312.pyc
+├── Datos_Elementos.cpython-312.pyc
+├── Datos_Facturas.cpython-312.pyc
+├── Facturacion.cpython-312.pyc
+├── Inventario.cpython-312.pyc
+└── Menu.cpython-312.pyc
+
 
 ## Descripción de los Archivos
 
@@ -45,41 +44,37 @@ Scrum_Pruebas-main/
 
 ## Instalación
 
+### Paso 1: Clonar el repositorio
+
 Para instalar y ejecutar este proyecto en tu máquina local, sigue estos pasos:
 
-1. Clona este repositorio en tu máquina local:
 
-   ```bash
-   git clone <URL-del-repositorio>
-   ```
+[git clone <URL-del-repositorio>](https://github.com/AlejandroRinconPerez/Proyecto_SCRUM_ALEJANDRO-RINCON_JAIME-PRADA-_-SEBASTIAN-DIAZ_JULI-N-_CAMILA-DIAZ/edit/main/README.md)
 
-2. Navega al directorio del proyecto:
+### Paso 2: Navegar al directorio del proyecto
+cd Scrum_Pruebas-main
 
-   ```bash
-   cd Scrum_Pruebas-main
-   ```
 
-3. Instala las dependencias necesarias (si las hay). Si hay un archivo `requirements.txt`, puedes usar el siguiente comando:
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Paso 3: Instalar las dependencias
+Instala las dependencias necesarias (si las hay). Si hay un archivo requirements.txt, puedes usar el siguiente comando:
+pip install -r requirements.txt
 
 ## Uso
-
 Para ejecutar el sistema, puedes usar el siguiente comando:
-
-```bash
 python main.py
-```
-
-Este comando iniciará el sistema y podrás interactuar con las funcionalidades de facturación e inventario a través del menú proporcionado.
 
 ## Contribución
+### Paso 1: Hacer un fork del repositorio
+### Paso 2: Crear una nueva rama
+### Paso 3: Realizar los cambios y hacer commit
+### Paso 4: Hacer push a la rama
+### Paso 5: Enviar un Pull Request
 
-Si deseas contribuir a este proyecto, por favor sigue estos pasos:
+## Licencia
+Este proyecto está bajo la Licencia XYZ. Para más detalles, consulta el archivo LICENSE.
 
-1. Haz un fork del repositorio.
-2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
-3. Realiza tus cambios y haz commit (`git commit -am 'Añadir nueva funcionalidad'`).
-4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`).
+Este formato en Markdown con múltiples niveles de encabezados permitirá una mejor organización y legibilidad del archivo README en plataformas como GitHub.
+
+
+
