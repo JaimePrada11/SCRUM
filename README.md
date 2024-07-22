@@ -2,34 +2,6 @@
 
 Este proyecto es una implementación de un sistema de gestión que incluye funcionalidades de facturación e inventario.
 
-## Contenido del Proyecto
-
-El proyecto está organizado de la siguiente manera:
-
-
-Scrum_Pruebas-main/
-├── Datos.py
-├── Facturacion.json
-├── Facturacion.py
-├── Inventario.json
-├── Inventario.py
-├── Menu.py
-├── main.py
-├── Modulos/
-│ ├── modificar_datos.py
-│ └── pycache/
-│ ├── modificar_datos.cpython-311.pyc
-│ └── modificar_datos.cpython-312.pyc
-└── pycache/
-├── Datos.cpython-312.pyc
-├── DatosItems.cpython-312.pyc
-├── Datos_Elementos.cpython-312.pyc
-├── Datos_Facturas.cpython-312.pyc
-├── Facturacion.cpython-312.pyc
-├── Inventario.cpython-312.pyc
-└── Menu.cpython-312.pyc
-
-
 ## Descripción de los Archivos
 
 - **Datos.py**: Archivo de datos que contiene la lógica para el manejo de datos en el sistema.
