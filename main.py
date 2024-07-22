@@ -1,7 +1,3 @@
-from Modulos.modificar_datos import*
+from Menu import *
 
-
-#No borrar esta ruta, esencial para funcion de Modificar datos
-RUTA_ARCHIVO='Inventario.json'
-
-modifi(RUTA_ARCHIVO)
+menu_principal()

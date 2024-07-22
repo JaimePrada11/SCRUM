@@ -2,11 +2,11 @@
     "P001": {
         "descripcion": "PANTALON",
         "Marca": "X",
-        "cantidad": 0,
+        "cantidad": "10",
         "Talla": "30",
-        "estado": "Sin stock",
-        "costo": 100,
-        "precio": 200
+        "estado": "Activo",
+        "costo": "100",
+        "precio": "150"
     },
     "P002": {
         "descripcion": "CAMISA",
@@ -15,7 +15,7 @@
         "Talla": "S",
         "estado": "Activo",
         "costo": 40,
-        "precio": 60
+        "precio": 100
     },
     "P003": {
         "descripcion": "CHAQUETA",
@@ -46,7 +46,7 @@
     },
     "P006": {
         "descripcion": "GORRO",
-        "Marca": "Tommy",
+        "Marca": "TOMMY",
         "cantidad": 25,
         "Talla": "UNICA",
         "estado": "Activo",
@@ -57,9 +57,18 @@
         "descripcion": "CAMISETA",
         "Marca": "H",
         "cantidad": 10,
-        "Talla": "S",
+        "Talla": "M",
         "estado": "Activo",
         "costo": 35,
         "precio": 70
+    },
+    "P009": {
+        "descripcion": "PANTALON",
+        "Marca": "LEVIS",
+        "Talla": "M",
+        "cantidad": 10,
+        "estado": "Activo",
+        "costo": 25,
+        "precio": 75
     }
 }

@@ -168,5 +168,4 @@ def facturas():
     else:
         print("No se añadieron productos a la factura.")
 
-facturas()
 

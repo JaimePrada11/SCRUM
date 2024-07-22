@@ -18,22 +18,88 @@ def generate_idp(prefix='P', width=3):
     current_idP += 1
     return new_id
 
+def producto_existe(descripcion, marca, talla):
+
+    for item_id, item_info in Inventario.items():
+        if (item_info["descripcion"] == descripcion.upper() and 
+            item_info["Marca"] == marca.upper() and 
+            item_info["Talla"] == talla.upper()):
+            return True
+    return False
+
 def Registro_prenda_nueva():
     cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
     
     ID_Ropa = generate_idp()
     info_elemento = {}
-    info_elemento["descripcion"] = str(input("Ingrese la descripcion del producto:  "))
-    info_elemento["Marca"] = str(input("Ingrese la Marca del Producto:  "))
-    info_elemento["cantidad"] = int(input("Cantidad de articulos ha registrar:  "))
-    info_elemento["Talla"] = str(input("Ingrese la talla del Producto:  "))
-    info_elemento["estado"] = "Activo" 
-    info_elemento["costo"] =  int(input("costo del producto:  "))
-    info_elemento["precio"] =  int(input("Ingrese el precio de venta del :  "))
+
+    # Descripción del producto
+    while True:
+        descripcion = input("Ingrese la descripcion del producto:  ").strip()
+        if descripcion:
+            info_elemento["descripcion"] = descripcion.upper()
+            break
+        else:
+            print("La descripción no puede estar vacía. Por favor, ingresa una descripción válida.")
+
+    # Marca del producto
+    while True:
+        marca = input("Ingrese la Marca del Producto:  ").strip()
+        if marca:
+            info_elemento["Marca"] = marca.upper()
+            break
+        else:
+            print("La marca no puede estar vacía. Por favor, ingresa una marca válida.")
+
+      # Cantidad de artículos
+    while True:
+        cantidad = input("Cantidad de artículos a registrar:  ").strip()
+        if cantidad.isdigit() and int(cantidad) > 0:
+            info_elemento["cantidad"] = int(cantidad)
+            break
+        else:
+            print("La cantidad debe ser un número. Inténtalo de nuevo.")
+
+    # Talla del producto
+    while True:
+        talla = input("Ingrese la talla del Producto:  ").strip()
+        if talla:
+            info_elemento["Talla"] = talla.upper()
+            break
+        else:
+            print("La talla no puede estar vacía. Por favor, ingresa una talla válida.")
+
+    if producto_existe(descripcion, marca, talla):
+        print("El producto ya existe en el inventario.")
+        return
+
+    info_elemento["estado"] = "Activo"
+
+    # Costo del producto
+    while True:
+        costo = input("Ingrese el costo del producto:  ").strip()
+        if costo.isdigit() and int(costo) >= 0:
+            info_elemento["costo"] = int(costo)
+            break
+        else:
+            print("El costo debe ser un número. Inténtalo de nuevo.")
+
+    # Precio del producto
+    while True:
+        precio = input("Ingrese el precio de venta del producto:  ").strip()
+        if precio.isdigit() and int(precio) >= 0:
+            info_elemento["precio"] = int(precio)
+            break
+        else:
+            print("El precio debe ser un número. Inténtalo de nuevo.")
+
+
     Inventario[ID_Ropa]= info_elemento
     guardar_datos(Ruta_JSON_INVENTARIO, Inventario)
+    print("***********")
     print("Informacion Guardada")
     print("***********")
+
 
 ###############################################################################################
 def Cambio_Cantidad():
@@ -239,23 +305,8 @@ def Cambio_Marca():
 
 ############################################################################################
 
-    
-
-    
-# def cargar_datos(Nombre_Archivo, Tipo):
-#     try:
-#         with open(Nombre_Archivo, "r") as file:
-#             Diccionario = json.load(file)
-#         return Diccionario
-#     except FileNotFoundError:
-#         if Tipo == "d":
-#             return {}
-#         elif Tipo == "l":
-#             return []
-        
-    inventario= cargar_datos("Inventario.json","d")
-
-def mostrar_stock(inventario):
+def mostrar_stock():
+    cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
     print("""
 ──────▄▀▄─────▄▀▄
 ─────▄█░░▀▀▀▀▀░░█▄
@@ -269,22 +320,15 @@ def mostrar_stock(inventario):
 ╚═╝╚═╝░░╚══╝░░░╚═╝░░░╚══════╝╚═╝░░╚══╝░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░╚════╝░""")
     print(f"{'CODIGO':<10} {'DESCRIPCIÓN':<15} {'MARCA':<10} {'CANTIDAD':<10} {'TALLA':<10} {'ESTADO':<10} {'COSTO':<10} {'PRECIO':<10}")
     print("-" * 90)
-    for codigo, detalles in inventario.items():
+    for codigo, detalles in Inventario.items():
         print(f"{codigo:<10} {detalles['descripcion']:<15} {detalles['Marca']:<10} {detalles['cantidad']:<10} {detalles['Talla']:<10} {detalles['estado']:<10} {detalles['costo']:<10} {detalles['precio']:<10}")
     print("-" * 90)
         
 
-
-
-def mostrar_stock_especifico(inventario, criterio, valor):
-    encontrados = []
+def mostrar_stock_especifico(criterio, valor):
+    cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
     
-    for codigo, detalles in inventario.items():
-        if detalles.get(criterio) == valor:
-            encontrados.append({**{'CODIGO': codigo}, **detalles})
-    
-    if encontrados:
-        print("""
+    print("""
 ──────▄▀▄─────▄▀▄
 ─────▄█░░▀▀▀▀▀░░█▄
 ─▄▄──█░░░░░░░░░░░█──▄▄
@@ -295,15 +339,22 @@ def mostrar_stock_especifico(inventario, criterio, valor):
 ██║██║╚████║░╚████╔╝░██╔══╝░░██║╚████║░░░██║░░░██╔══██║██╔══██╗██║██║░░██║
 ██║██║░╚███║░░╚██╔╝░░███████╗██║░╚███║░░░██║░░░██║░░██║██║░░██║██║╚█████╔╝
 ╚═╝╚═╝░░╚══╝░░░╚═╝░░░╚══════╝╚═╝░░╚══╝░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░╚════╝░""")
-        print(f"{'CODIGO':<10} {'DESCRIPCIÓN':<15} {'MARCA':<10} {'CANTIDAD':<10} {'TALLA':<10} {'ESTADO':<10} {'COSTO':<10} {'PRECIO':<10}")
-        print("-" * 90)
-        for item in encontrados:
-            print(f"{item['CODIGO']:<10} {item['descripcion']:<15} {item['Marca']:<10} {item['cantidad']:<10} {item['Talla']:<10} {item['estado']:<10} {item['costo']:<10} {item['precio']:<10}")
-        print("-" * 90)
-    else:
-        print("No se encontraron resultados para la búsqueda.")
+    print(f"{'CODIGO':<10} {'DESCRIPCIÓN':<15} {'MARCA':<10} {'CANTIDAD':<10} {'TALLA':<10} {'ESTADO':<10} {'COSTO':<10} {'PRECIO':<10}")
+    print("-" * 90)
 
-#------------------------------------------------------------------------------------------------------------------------------------------------------------
+    encontrado = False
+    for codigo, detalles in Inventario.items():
+        if criterio in detalles and valor.upper() in str(detalles[criterio]).upper():
+            print(f"{codigo:<10} {detalles['descripcion']:<15} {detalles['Marca']:<10} {detalles['cantidad']:<10} {detalles['Talla']:<10} {detalles['estado']:<10} {detalles['costo']:<10} {detalles['precio']:<10}")
+            encontrado = True
+
+    if not encontrado:
+        print("No se encontraron resultados para el criterio de búsqueda.")
+
+    print("-" * 90)
+
+
+def realizar_busqueda():
 
     while True:
         print("MOSTRAR INVENTARIO")
@@ -314,8 +365,7 @@ def mostrar_stock_especifico(inventario, criterio, valor):
         try:
             opc = int(input("Digite el número de la opción que desea elegir:  "))
             if opc == 1:
-                inventario= cargar_datos("Inventario.json","d")
-                mostrar_stock(inventario)
+                mostrar_stock()
                 continuar=int(input('¿Desea seguir buscando? \n1.Si \n2.No \n'))
                 if continuar == 1:
                     continue
@@ -325,8 +375,8 @@ def mostrar_stock_especifico(inventario, criterio, valor):
                 elif opc != 1 or 2:
                     print('Opción no valida')
             elif opc == 2:
-                inventario = cargar_datos("Inventario.json","d")
-                criterios = ['codigo','descripcion','Marca','cantidad','Talla','estado','costo','precio']
+                cargar_datos(Ruta_JSON_INVENTARIO, Inventario)
+                criterios = ['descripcion','Marca','cantidad','Talla','estado','costo','precio']
                 n = 0
                 for i in criterios:
                     n = n+1
@@ -336,7 +386,7 @@ def mostrar_stock_especifico(inventario, criterio, valor):
                 elegido = criterios[eleccion]
                 criterio = str(elegido)
                 valor = input(f'Escriba la descripción que se encuentra en {criterios[eleccion]}:  ')
-                mostrar_stock_especifico(inventario, criterio, valor)
+                mostrar_stock_especifico(criterio, valor)
                 continuar=int(input('¿Desea seguir buscando? \n1.Si \n2.No \n'))
                 if continuar == 1:
                     continue
@@ -350,9 +400,6 @@ def mostrar_stock_especifico(inventario, criterio, valor):
                 print('Opción no valida')
         except ValueError:
             print("OCIÓN NO VALIDA, DIGITE UN NÚMERO")
-
-
-        
         
 ###################################################################
 
