@@ -3,8 +3,8 @@ import json
 Inventario = {}
 Facturacion = {}
 
-Ruta_JSON_INVENTARIO = "Inventario.json"
-RUTA_JSON_FACTURAS = "Facturacion.json"
+Ruta_JSON_INVENTARIO = "Data_Base/Inventario.json"
+RUTA_JSON_FACTURAS = "Data_Base/Facturacion.json"
 
 
 def guardar_datos(Ruta_JSON, Datos):
