@@ -1,3 +1,6 @@
+# Tienda Enigma
+
+Tienda Enigma es una aplicación para la gestión de ventas e inventario desarrollada en Python. Permite a los administradores y vendedores gestionar productos, emitir facturas, y generar reportes detallados. Utiliza archivos JSON para almacenar datos de inventario y facturación, ofreciendo una solución eficiente y escalable para la administración de ventas.
 
 ## Tabla de contenidos
 
@@ -26,18 +29,21 @@
 
 - **Git:** Para clonar el repositorio, necesitas tener Git instalado. Puedes descargarlo desde [aquí](https://git-scm.com/).
 
+> [!IMPORTANT]
+> Asegúrate de tener Git instalado para facilitar la colaboración y la gestión de versiones del proyecto.
+
 
 ## Instalacion
 Para instalar y ejecutar la página web localmente:
 
    1. Clona el repositorio:
    ```bash
-   $ git clone https://github.com/JaimePrada11/Python.git
+   $ git clone https://github.com/JaimePrada11/SCRUM.git
    ```
    2. Navega al directorio del proyecto:
    
    ```bash
-   cd Python
+   cd SCRUM
    ```
 
 ## Uso
@@ -72,9 +78,11 @@ Para visualizar y trabajar con esta página web, sigue estos pasos:
 
 El proyecto está organizado en dos roles principales que garantizan la correcta administración y gestión del sistema:
 
-Administrador: Se encarga de la administración completa del sistema, incluyendo la creación de nuevos productos, la visualización de reportes detallados, el análisis de ganancias y la revisión de facturas. Este rol tiene acceso total a todas las funcionalidades relacionadas con la gestión y supervisión del proyecto.
+- **Administrador**: Se encarga de la administración completa del sistema, incluyendo la creación de nuevos productos, la visualización de reportes detallados, el análisis de ganancias y la revisión de facturas.
+    - Este rol tiene acceso total a todas las funcionalidades relacionadas con la gestión y supervisión del proyecto.
 
-Vendedor: Su responsabilidad principal es la emisión de facturas y la revisión del inventario. Este rol se centra en la interacción directa con los clientes a través de la generación de facturas y en la gestión básica del inventario para asegurar que esté actualizado.
+- **Vendedor**: Su responsabilidad principal es la emisión de facturas y la revisión del inventario.
+    - Este rol se centra en la interacción directa con los clientes a través de la generación de facturas y en la gestión básica del inventario para asegurar que esté actualizado.
 
 ## Estructura JSON
 
